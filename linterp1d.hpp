@@ -15,10 +15,15 @@ class LinearInterp {
         dvec interp(dvec f);
 
     private:
-        dvec *a;
-        dvec *b;
-        dvec::iterator low,up;
-        ivec* lower;
-        ivec* upper; 
+        int m;                         // Number of source points
+        int n;                         // Number of target points
+
+        dvec a;                        // Left weights
+        dvec b;                        // Right weights
+        dvec::iterator low,up;         // index iterator
+        ivec lower;                    // lower bounds
+        ivec upper;                    // upper bounds
+
+
 };
 

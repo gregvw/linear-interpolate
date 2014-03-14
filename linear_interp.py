@@ -15,16 +15,18 @@ class LinearInterp(object):
         self.b = np.zeros(n)
 
         for k in range(n):
-
+            
+            # Left extrapolation case
             if self.dl[k] == -1 and self.dr[k] == 0:
                 self.dl[k] = 0
                 self.dr[k] = 1      
 
+            # Right extrapolation case
             elif self.dl[k] == m-1 and self.dr[k] == m:
                 self.dl[k] = m-2
                 self.dr[k] = m-1
 
-
+            # Same point 
             if self.dl[k] == self.dr[k]:
                 self.b[k] = 0.5
 

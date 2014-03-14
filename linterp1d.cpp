@@ -24,7 +24,8 @@ LinearInterp::LinearInterp(dvec x1, dvec x2)
     {
         low = std::lower_bound(x1.begin(),x1.end(),x2[k]);
         up = std::upper_bound(x1.begin(),x1.end(),x2[k]);
-        
+        lower[k] = (low-x1.begin());
+        upper[k] = (up-x1.begin()); 
     }
  
 }
